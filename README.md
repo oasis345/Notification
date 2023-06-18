@@ -24,6 +24,8 @@ A ~ Z 까지 전반적으로 서비스들을 Class화 하여 구조를 잡는데
   ID:  test2@gmail.com <br/>
  password: 123
 
+서로 다른 계정으로 로그인 후 게시물 등록시 알람 메시지가 옵니다!
+
 ## 개발 환경
 1. Client: React + Vite
 2. Server: NestJs
