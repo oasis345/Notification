@@ -15,7 +15,13 @@ A ~ Z 까지 전반적으로 서비스들을 Class화 하여 구조를 잡는데
 # Test
  접속 http://172.30.1.18:3000 <br/>
  다음 테스트 계정으로 로그인 하여 확인 할 수 있습니다.  <br/>
+ 
+ 계정 1 <br/>
  ID:  test1@gmail.com <br/>
+ password: 123
+
+ 계정 2 <br/>
+  ID:  test2@gmail.com <br/>
  password: 123
 
 ## 개발 환경
