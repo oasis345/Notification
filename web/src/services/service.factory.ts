@@ -18,5 +18,4 @@ export async function registerServices() {
 
   registry.register({ notificationService, authService, dataService, uiService });
   authService.init();
-  globalThis.registry = registry;
 }

@@ -34,8 +34,11 @@ export default class PostBoard extends React.Component<any, { postItems: PostIte
       this.subscription?.unsubscribe();
 
       this.subscription = await dataService.subscribe(options, (changeItem) => {
-        console.log(changeItem);
-        // do something.
+        const newData = changeItem.data as PostItem[];
+
+        this.setState({
+          postItems: [...this.state.postItems, ...newData],
+        });
       });
     }
   }

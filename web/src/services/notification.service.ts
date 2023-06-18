@@ -22,9 +22,9 @@ export class NotificationService implements WebNotificationService {
 
   disturbMode = false;
 
-  disturbStartTime? = new Date();
+  disturbStartTime?: Date;
 
-  disturbEndTime? = new Date();
+  disturbEndTime?: Date;
 
   init() {
     this.eventSource?.close();

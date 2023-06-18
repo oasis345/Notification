@@ -20,7 +20,12 @@ export class DataService implements ServerDataService {
     parsedData.push(options.data);
 
     await fs.writeFile(`../server/data/${options.table}.json`, JSON.stringify(parsedData));
-    this.changeStream.next({ changeType: 'create', ...options });
+
+    this.changeStream.next({
+      changeType: 'create',
+      table: options.table,
+      data: [options.data],
+    });
   }
 
   subscribe(options: DataOptions<any>, next: (changeItem: ChangeItem) => void): SubscriptionLike {

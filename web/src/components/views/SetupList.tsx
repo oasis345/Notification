@@ -36,26 +36,30 @@ const SetupList = observer(() => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => (notificationService.disturbMode = e.target.checked)}
         />
       </ListItem>
-      <ListItem>
-        <ListItemContent component="label">시작 시간</ListItemContent>
-        <DatePicker
-          selected={notificationService.disturbStartTime}
-          onChange={(date) => (notificationService.disturbStartTime = date)}
-          showTimeSelect
-          showTimeSelectOnly
-          dateFormat="hh:mm aa"
-        />
-      </ListItem>
-      <ListItem>
-        <ListItemContent component="label">종료 시간</ListItemContent>
-        <DatePicker
-          selected={notificationService.disturbEndTime}
-          onChange={(date) => (notificationService.disturbEndTime = date)}
-          showTimeSelect
-          showTimeSelectOnly
-          dateFormat="hh:mm aa"
-        />
-      </ListItem>
+      {notificationService.disturbMode && (
+        <>
+          <ListItem>
+            <ListItemContent component="label">시작 시간</ListItemContent>
+            <DatePicker
+              selected={notificationService.disturbStartTime}
+              onChange={(date) => (notificationService.disturbStartTime = date)}
+              showTimeSelect
+              showTimeSelectOnly
+              dateFormat="hh:mm aa"
+            />
+          </ListItem>
+          <ListItem>
+            <ListItemContent component="label">종료 시간</ListItemContent>
+            <DatePicker
+              selected={notificationService.disturbEndTime}
+              onChange={(date) => (notificationService.disturbEndTime = date)}
+              showTimeSelect
+              showTimeSelectOnly
+              dateFormat="hh:mm aa"
+            />
+          </ListItem>
+        </>
+      )}
     </List>
   );
 });

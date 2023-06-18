@@ -11,7 +11,7 @@ import { join } from 'path';
     NotificationModule,
     AuthModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'web'),
+      rootPath: join(__dirname, '..', 'dist/web'),
     }),
   ],
 })
