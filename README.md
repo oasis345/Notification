@@ -13,10 +13,10 @@ A ~ Z 까지 전반적으로 서비스들을 Class화 하여 구조를 잡는데
 4. 로그아웃시 알림 인스턴스 삭제.
 
 # Test
- http://172.30.1.18:3000
+ 접속 http://172.30.1.18:3000 <br/>
  다음 테스트 계정으로 로그인 하여 확인 할 수 있습니다.  <br/>
- test1@gmail.com <br/>
- 123
+ ID:  test1@gmail.com <br/>
+ password: 123
 
 ## 개발 환경
 1. Client: React + Vite
