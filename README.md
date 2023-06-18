@@ -12,19 +12,6 @@ A ~ Z 까지 전반적으로 서비스들을 Class화 하여 구조를 잡는데
 3. 데이터 서비스를 통한 table을 구독하여 해당 테이블에 데이터가 생성시 알림 발송.
 4. 로그아웃시 알림 인스턴스 삭제.
 
-# Test
- 다음 테스트 계정으로 로그인 하여 확인 할 수 있습니다.  <br/>
- 
- 계정 1 <br/>
- ID:  test1@gmail.com <br/>
- password: 123
-
- 계정 2 <br/>
-  ID:  test2@gmail.com <br/>
- password: 123
-
-서로 다른 계정으로 로그인 후 게시물 등록시 알람 메시지가 옵니다!
-
 ## 개발 환경
 1. Client: React + Vite
 2. Server: NestJs
