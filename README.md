@@ -13,6 +13,10 @@ A ~ Z 까지 전반적으로 서비스들을 Class화 하여 구조를 잡는데
 4. 로그아웃시 알림 인스턴스 삭제.
 
 
+테스트 계정은로 로그인 하여 확인 할 수 있습니다. 
+test1@gmail.com
+123
+
 ## 개발 환경
 1. Client: React + Vite
 2. Server: NestJs
