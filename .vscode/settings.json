@@ -1,0 +1,17 @@
+{
+  "eslint.workingDirectories": ["./common", "./server", "./web"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    // "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "prettier.printWidth": 120,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": true,
+  "search.exclude": {
+    "**/yarn.lock": true,
+    "**/package-lock.json": true
+  }
+}

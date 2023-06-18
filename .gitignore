@@ -1,0 +1,13 @@
+.svn
+*.tgz
+node_modules
+target
+logs
+dist
+*.pdb
+*.log
+*.tsbuildinfo
+__pycache__
+build
+.dbgate
+LOADED

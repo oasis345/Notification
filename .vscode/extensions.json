@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "hancel.google-translate",
+    "donjayamanne.githistory",
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "formulahendry.auto-rename-tag",
+    "kisstkondoros.vscode-codemetrics",
+    "lukas-tr.materialdesignicons-intellisense",
+    "christian-kohler.npm-intellisense"
+  ]
+}
