@@ -21,7 +21,7 @@ export default function PostDetail(postItem: PostItem) {
         </Typography>
       </CardContent>
       <CardActions>
-        {postItem.owner === registry.authService.user?.email && (
+        {registry.authService.user && postItem.owner === registry.authService.user?.email && (
           <Button
             size="small"
             onClick={() => {
