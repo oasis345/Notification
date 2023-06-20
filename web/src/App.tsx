@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     uiService.notify = enqueueSnackbar;
-    uiService.go = navigate;
+    uiService.navigate = navigate;
 
     window.addEventListener('beforeunload', (event) => {
       event.preventDefault();

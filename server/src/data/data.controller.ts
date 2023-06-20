@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Req } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Req } from '@nestjs/common';
 import { DataService } from './data.service';
 import { DataOptions } from '@common/data/data.interface';
 import { Request } from 'express';
@@ -20,5 +20,13 @@ export class DataController {
     options.data = request.body;
 
     await this.dataService.save(options);
+  }
+
+  @Delete(':table/:dataId')
+  async remove(@Req() request: Request<DataOptions>) {
+    const options = request.params;
+    options.data = request.body;
+
+    await this.dataService.remove(options);
   }
 }

@@ -27,6 +27,16 @@ export class DataService implements WebDataService {
     return data;
   }
 
+  async remove<T = any>(options: DataOptions<T>): Promise<void> {
+    const data = await registry.httpClient.request({
+      method: 'delete',
+      url: `${this.DATA_API_URL}/${options.table}/dataId`,
+      params: options,
+    });
+
+    return data;
+  }
+
   async subscribe(options: DataOptions<any>, next: (changeItem: ChangeItem) => void): Promise<SubscriptionLike> {
     const { httpClient, notificationService } = registry;
     const subscribeId = randomString();

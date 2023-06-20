@@ -5,7 +5,11 @@ import { UiService } from '@common/ui/ui.interface';
 export class WebUiService implements UiService {
   isMobile = false;
 
+  navigate?: NavigateFunction;
+
   notify!: ProviderContext['enqueueSnackbar'];
 
-  go!: NavigateFunction;
+  go(to: string, props: any) {
+    this.navigate!(to, { state: props });
+  }
 }

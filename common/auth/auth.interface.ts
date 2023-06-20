@@ -6,7 +6,9 @@ export interface User {
 export interface AuthService {
 	user?: User;
 
-	signIn(username?: string, password?: string): Promise<User>;
+	signIn(username?: string, password?: string): Promise<void>;
+
+	signUp(user: User): Promise<void>;
 
 	signOut(): void;
 }

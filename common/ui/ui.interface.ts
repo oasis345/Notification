@@ -1,7 +1,13 @@
+export type NotifyOption = {
+	variant: 'success' | 'default' | 'error' | 'info' | 'warning';
+};
+
 export interface UiService {
 	isMobile: boolean;
 
-	notify(message: string): void;
+	navigate?: any;
 
-	go(to: string): void;
+	notify(message: string, option?: NotifyOption): void;
+
+	go(to: string, props?: any): void;
 }

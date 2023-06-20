@@ -25,15 +25,14 @@ const Navbar = observer(() => {
       <img src={logo} width={140} height={40} onClick={() => uiService.go('/')} style={{ cursor: 'pointer' }} />
       <div>
         {!authService.user && (
-          <Button
-            variant="text"
-            sx={{ width: '80px' }}
-            color="success"
-            size="medium"
-            onClick={() => uiService.go('/Login')}
-          >
-            로그인
-          </Button>
+          <>
+            <Button variant="text" sx={{ width: '80px' }} color="success" onClick={() => uiService.go('/SignIn')}>
+              로그인
+            </Button>
+            <Button variant="text" sx={{ width: '80px' }} color="success" onClick={() => uiService.go('/SignUp')}>
+              회원 가입
+            </Button>
+          </>
         )}
         {authService.user && (
           <div style={{ display: 'flex' }}>

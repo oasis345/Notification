@@ -13,7 +13,7 @@ export default function AnyView() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ViewComponent />
+      <ViewComponent {...location.state} />
     </Suspense>
   );
 }

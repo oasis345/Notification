@@ -3,16 +3,15 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { registry } from '@common/registry';
 
-export default function Login() {
-  const { authService, uiService } = registry;
+export default function SignIn() {
+  const { authService } = registry;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const onSubmitted = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const result = await authService.signIn(email, password);
-    if (result) uiService.go('/');
+    await authService.signIn(email, password);
   };
 
   return (
@@ -27,6 +26,7 @@ export default function Login() {
       >
         <TextField
           name="title"
+          required
           fullWidth
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -35,6 +35,7 @@ export default function Login() {
 
         <TextField
           name="password"
+          required
           fullWidth
           type="password"
           value={password}

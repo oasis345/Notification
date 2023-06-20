@@ -21,23 +21,30 @@ export class AuthService implements WebAuthService {
     if (this.user) this.notificationService.init();
   }
 
-  async signIn(email?: string, password?: string): Promise<User> {
-    const { httpClient } = registry;
+  async signIn(email?: string, password?: string): Promise<void> {
+    const { httpClient, uiService } = registry;
     let userData;
 
     try {
-      if (email && password) {
+      if (email && password)
         userData = await httpClient.request({ serviceName: 'signIn', method: 'post', data: { email, password } });
-      } else {
-        await this.init();
-        userData = this.user;
-      }
-    } catch (error) {
-      if (!userData) alert('login fail!');
-    }
 
-    await this.loadUser();
-    return userData;
+      await this.init();
+      uiService.go('');
+    } catch (error: any) {
+      if (!userData) uiService.notify(error.message, { variant: 'error' });
+    }
+  }
+
+  async signUp(user: User): Promise<void> {
+    const { httpClient, uiService } = registry;
+
+    try {
+      await httpClient.request<User>({ serviceName: 'signUp', method: 'post', data: user });
+      uiService.go('SignIn');
+    } catch (error: any) {
+      uiService.notify(error.message, { variant: 'error' });
+    }
   }
 
   signOut(): void {

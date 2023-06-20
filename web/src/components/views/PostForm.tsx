@@ -10,6 +10,7 @@ export default function PostForm() {
   const [imageUrl, setImage] = useState('');
   const [price, setPrice] = useState(0);
   const [region, setRegion] = useState('');
+  const [description, setDescription] = useState('');
 
   const onSubmitted = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -17,9 +18,10 @@ export default function PostForm() {
     const data: PostItem = {
       title,
       imageUrl,
-      owner: authService.user?.email ?? 'user',
+      owner: authService.user!.email,
       price,
       region,
+      description,
     };
 
     await dataService.save({ table: 'Post', data });
@@ -40,6 +42,7 @@ export default function PostForm() {
           name="title"
           fullWidth
           value={title}
+          required
           onChange={(e) => setTitle(e.target.value)}
           label={'제목'}
         ></TextField>
@@ -49,6 +52,7 @@ export default function PostForm() {
           fullWidth
           type="number"
           value={price}
+          required
           onChange={(e) => setPrice(e.target.value as any)}
           label={'가격'}
         ></TextField>
@@ -56,9 +60,20 @@ export default function PostForm() {
           name="region"
           fullWidth
           value={region}
+          required
           onChange={(e) => setRegion(e.target.value)}
           label={'거래 희망 장소'}
         ></TextField>
+        <TextField
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          fullWidth
+          label={'설명'}
+          rows={10}
+          multiline
+          maxRows={20}
+        />
         <TextField
           name="image"
           fullWidth

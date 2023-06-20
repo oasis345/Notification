@@ -14,6 +14,11 @@ export class AuthController {
     return request?.user;
   }
 
+  @Post('/signUp')
+  async signUp(@Req() request: Request) {
+    return await this.authService.signUp(request.body);
+  }
+
   @Post('/signOut')
   async signOut(@Req() request: Request) {
     request.logout((err) => {

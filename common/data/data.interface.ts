@@ -4,6 +4,7 @@ export type Dict<T = any> = { [k: string]: T };
 
 export interface DataOptions<T = any> {
 	table: string;
+	dataId?: any;
 	data?: T;
 }
 
@@ -19,6 +20,8 @@ export abstract class DataService {
 	abstract get<T = Dict>(options: DataOptions<T>): Promise<T>;
 
 	abstract save<T = any>(options: DataOptions<T>): Promise<void>;
+
+	abstract remove<T = any>(options: DataOptions<T>): Promise<void>;
 
 	abstract subscribe(
 		options: DataOptions,
