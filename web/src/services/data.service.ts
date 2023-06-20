@@ -20,7 +20,6 @@ export class DataService implements WebDataService {
     const data = await registry.httpClient.request({
       method: 'post',
       url: `${this.DATA_API_URL}/${options.table}`,
-      params: options,
       data: options.data,
     });
 

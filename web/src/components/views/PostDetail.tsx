@@ -11,7 +11,7 @@ import { registry } from '@common/registry';
 export default function PostDetail(postItem: PostItem) {
   return (
     <Card>
-      <CardMedia component="img" sx={{ minHeight: 400 }} src={postItem.imageUrl ? postItem.imageUrl : carrotEmoji} />
+      <CardMedia component="img" sx={{ maxHeight: 600 }} src={postItem.imageUrl ? postItem.imageUrl : carrotEmoji} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {postItem.title}

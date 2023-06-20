@@ -57,12 +57,9 @@ export default class PostBoard extends React.Component<any, { postItems: PostIte
               key={idx}
               onClick={() => registry.uiService.go('PostDetail', item)}
               style={{ cursor: 'pointer' }}
-              sx={{
-                minWidth: '160px',
-              }}
             >
               <img
-                style={{ borderRadius: '10%' }}
+                style={{ borderRadius: '10%', maxHeight: '200px', minWidth: '160px', height: '200px' }}
                 src={item.imageUrl}
                 onError={(e) => ((e.target as HTMLImageElement).src = carrotEmoji)}
               />
