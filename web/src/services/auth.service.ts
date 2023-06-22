@@ -41,6 +41,7 @@ export class AuthService implements WebAuthService {
 
     try {
       await httpClient.request<User>({ serviceName: 'signUp', method: 'post', data: user });
+      uiService.notify('회원가입 성공!', { variant: 'success' });
       uiService.go('SignIn');
     } catch (error: any) {
       uiService.notify(error.message, { variant: 'error' });
