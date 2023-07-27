@@ -8,7 +8,7 @@ import { PostItem } from '@common/post/post.interface';
 import carrotEmoji from '../../assets/carrotEmoji.jpg';
 import { registry } from '@common/registry';
 
-export default function PostDetail(postItem: PostItem) {
+export default function BoardDetail(postItem: PostItem) {
   return (
     <Card>
       <CardMedia component="img" sx={{ maxHeight: 600 }} src={postItem.imageUrl ? postItem.imageUrl : carrotEmoji} />

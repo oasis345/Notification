@@ -14,19 +14,23 @@
 @media (max-width: 600px) {
   .main_layout {
     grid-template-areas:
-      'header header header'
-      'main main main';
+      'header'
+      'main';
+
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .main {
+    padding: 1rem;
   }
 }
 
 .header {
   grid-area: header;
-  min-height: 4.25rem;
 }
 
 .main {
   grid-area: main;
-  padding: 0rem 1rem;
 }
 
 .left_side {
@@ -35,9 +39,4 @@
 
 .right_side {
   grid-area: right_side;
-}
-
-.footer {
-  grid-area: footer;
-  min-height: 10rem;
 }

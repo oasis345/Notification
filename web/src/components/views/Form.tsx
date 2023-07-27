@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { registry } from '@common/registry';
 
-export default function PostForm() {
+export default function Form() {
   const { dataService, authService, uiService } = registry;
   const [title, setTitle] = useState('');
   const [imageUrl, setImage] = useState('');

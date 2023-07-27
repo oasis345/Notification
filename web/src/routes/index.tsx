@@ -1,14 +1,14 @@
 import AnyView from 'components/views/AnyView';
 import App from '../App';
 import { createBrowserRouter } from 'react-router-dom';
-import PostBoard from 'components/views/PostBoard';
+import { Home } from 'components/views/Home';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { path: '/', element: <PostBoard /> },
+      { path: '/', element: <Home /> },
       {
         path: '/:view',
         element: <AnyView />,

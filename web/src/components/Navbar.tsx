@@ -1,67 +1,51 @@
-import logo from '../assets/logo.png';
 import Button from '@mui/material/Button';
 import { registry } from '@common/registry';
 import { observer } from 'mobx-react';
-import { IconButton } from '@mui/material';
+import { AppBar, Box, Container, IconButton, Toolbar } from '@mui/material';
 import Settings from '@mui/icons-material/Settings';
 
 const Navbar = observer(() => {
   const { authService, uiService } = registry;
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        width: '100%',
-        justifyContent: 'space-between',
-        background: 'white',
-        top: '0',
-        padding: '1rem',
-        position: 'fixed',
-        boxSizing: 'border-box',
-        zIndex: 1000,
-      }}
-    >
-      <img src={logo} width={140} height={40} onClick={() => uiService.go('/')} style={{ cursor: 'pointer' }} />
-      <div>
-        {!authService.user && (
-          <>
-            <Button variant="text" sx={{ width: '80px' }} color="success" onClick={() => uiService.go('/SignIn')}>
-              로그인
+    <AppBar>
+      <Container>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex' } }}>
+            <Button sx={{ my: 2, color: 'white' }} onClick={() => uiService.go('/')}>
+              Home
             </Button>
-            <Button variant="text" sx={{ width: '80px' }} color="success" onClick={() => uiService.go('/SignUp')}>
-              회원 가입
-            </Button>
-          </>
-        )}
-        {authService.user && (
-          <div style={{ display: 'flex' }}>
-            <Button
-              variant="text"
-              sx={{ width: '80px' }}
-              color="success"
-              size="medium"
-              onClick={() => uiService.go('/PostForm')}
-            >
-              판매
-            </Button>
+          </Box>
 
-            <Button
-              variant="text"
-              sx={{ width: '80px' }}
-              color="success"
-              size="medium"
-              onClick={() => authService.signOut()}
-            >
-              로그 아웃
-            </Button>
-            <IconButton onClick={() => uiService.go('/SetupList')}>
-              <Settings />
-            </IconButton>
-          </div>
-        )}
-      </div>
-    </div>
+          <Box sx={{ flexGrow: 0 }}>
+            {!authService.user && (
+              <>
+                <Button sx={{ color: 'white' }} onClick={() => uiService.go('/SignIn')}>
+                  로그인
+                </Button>
+                <Button sx={{ color: 'white' }} onClick={() => uiService.go('/SignUp')}>
+                  회원 가입
+                </Button>
+              </>
+            )}
+            {authService.user && (
+              <>
+                <Button sx={{ color: 'white' }} size="medium" onClick={() => uiService.go('/Form')}>
+                  판매
+                </Button>
+
+                <Button sx={{ color: '#fff' }} size="medium" onClick={() => authService.signOut()}>
+                  로그 아웃
+                </Button>
+                <IconButton onClick={() => uiService.go('/SetupList')}>
+                  <Settings />
+                </IconButton>
+              </>
+            )}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 });
 

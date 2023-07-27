@@ -8,7 +8,7 @@ import { SubscriptionLike } from 'rxjs';
 import React from 'react';
 import carrotEmoji from '../../assets/carrotEmoji.jpg';
 
-export default class PostBoard extends React.Component<any, { postItems: PostItem[] }> {
+export default class Board extends React.Component<any, { postItems: PostItem[] }> {
   constructor(props: any) {
     super(props);
 
@@ -55,7 +55,7 @@ export default class PostBoard extends React.Component<any, { postItems: PostIte
           {this.state.postItems.map((item, idx) => (
             <ImageListItem
               key={idx}
-              onClick={() => registry.uiService.go('PostDetail', item)}
+              onClick={() => registry.uiService.go('BoardDetail', item)}
               style={{ cursor: 'pointer' }}
             >
               <img
