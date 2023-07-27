@@ -42,7 +42,7 @@ export const Home = () => {
         <Typography variant="h4" gutterBottom>
           Intro
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ display: 'flex', flexWrap: uiService.isMobile ? 'wrap' : 'nowrap', justifyContent: 'center' }}>
           <Avatar src={profileImage} sx={{ width: 250, height: 250 }} />
           <CardContent>
             <Typography variant="h5" gutterBottom>
@@ -207,7 +207,7 @@ export const Home = () => {
         </TableContainer>
       </section>
       {
-        <Dialog open={openExinnoDialog}>
+        <Dialog fullScreen={uiService.isMobile} open={openExinnoDialog}>
           <DialogTitle>{'익스이노'}</DialogTitle>
           <Divider />
           <DialogContent>

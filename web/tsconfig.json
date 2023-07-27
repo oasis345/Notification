@@ -22,7 +22,8 @@
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "paths": {
       "@/*": ["src/*"],
-      "@common/*": ["../../common/*"]
+      // "@common/*": ["../../common/*"]
+      "@common/*": ["./node_modules/@common/*"]
     }
   },
   "include": ["src"],
