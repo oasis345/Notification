@@ -7,27 +7,25 @@ import { enqueueSnackbar, SnackbarProvider } from 'notistack';
 import { useMediaQuery } from '@mui/material';
 
 function App() {
-  const navigate = useNavigate();
-  const { uiService, notificationService } = registry;
-  const isMobile = useMediaQuery('(max-width: 600px)');
-  uiService.isMobile = isMobile;
+  // const navigate = useNavigate();
+  // const { uiService, notificationService } = registry;
+  // const isMobile = useMediaQuery('(max-width: 600px)');
+  // uiService.isMobile = isMobile;
 
-  useEffect(() => {
-    uiService.notify = enqueueSnackbar;
-    uiService.navigate = navigate;
+  // useEffect(() => {
+  //   uiService.notify = enqueueSnackbar;
+  //   uiService.navigate = navigate;
 
-    window.addEventListener('beforeunload', (event) => {
-      event.preventDefault();
-      notificationService.close();
-    });
-  }, [navigate, notificationService, uiService]);
+  //   window.addEventListener('beforeunload', (event) => {
+  //     event.preventDefault();
+  //     notificationService.close();
+  //   });
+  // }, [navigate, notificationService, uiService]);
 
   return (
     <SnackbarProvider maxSnack={3}>
       <div className="main_layout">
-        <div className="header">
-          <Navbar />
-        </div>
+        <div className="header">{/* <Navbar /> */}</div>
 
         <div className="main">
           <Outlet />
