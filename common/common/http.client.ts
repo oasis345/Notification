@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import qs from 'qs';
+// import qs from 'qs';
 
-axios.defaults.paramsSerializer = (params) => {
-	return qs.stringify(params);
-};
+// axios.defaults.paramsSerializer = (params) => {
+// 	return qs.stringify(params);
+// };
 
 axios.interceptors.response.use(
 	function (response) {
